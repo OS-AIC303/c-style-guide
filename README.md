@@ -22,6 +22,7 @@ When writing user applications use **4-character** tabs. If you write kernel cod
 Do not use spaces for indentation.
 
 Example:
+
 ```c
 if (condition) {
     do_something();
@@ -89,7 +90,7 @@ AIC303 follows the Linux kernel / K&R brace style.
 
 ### 4.1 Control statements
 
-Opening braces go on the same line as the statement:
+Opening braces go on the same line as the statement. For example:
 
 ```c
 if (condition) {
@@ -135,6 +136,8 @@ default:
 ### 4.2 Function definitions
 
 Functions are the important exception: the opening brace goes on the **next line**.
+
+Write:
 
 ```c
 int calculate_sum(int a, int b)
@@ -186,7 +189,9 @@ do {
 
 ## 5. Spaces
 
-Use spaces consistently around binary and ternary operators:
+Use spaces consistently around binary and ternary operators.
+
+Write this:
 
 ```c
 x = a + b;
@@ -195,7 +200,7 @@ if (x == y)
     return 1;
 ```
 
-not:
+not this:
 
 ```c
 x=a+b;
@@ -204,14 +209,16 @@ if (x==y)
     return 1;
 ```
 
-Do not put unnecessary spaces inside parentheses:
+Do not put unnecessary spaces inside parentheses.
+
+Write:
 
 ```c
 if (x == y)
     do_something();
 ```
 
-not:
+Do not write:
 
 ```c
 if ( x == y )
@@ -227,14 +234,16 @@ for (i = 0; i < count; i++)
 while (condition)
 ```
 
-Function calls do not have a space before the opening parenthesis:
+Function calls do not have a space before the opening parenthesis.
+
+Write:
 
 ```c
 printf("Hello\n");
 calculate_result();
 ```
 
-not:
+Do not write:
 
 ```c
 printf ("Hello\n");
@@ -510,7 +519,10 @@ Every function is prototyped somewhere. Prototypes for private functions go
 at the top of the source file, and those functions are declared static.
 Prototypes include parameter names. Do not use extern on function
 declarations.
+
 Preferred prototype order: storage class, return type, name, parameters.
+
+For example:
 
 ```c
 static inline int clamp_int(int value, int low, int high);
@@ -717,7 +729,7 @@ The purpose of Doxygen comments is to communicate the function's **contract, beh
 
 ## 11. `if`, `else`, and Comparisons
 
-Write conditions clearly.
+Write conditions clearly:
 
 ```c
 if (count == 0)
@@ -799,7 +811,7 @@ default:
 
 ## 13. Loops
 
-Use straightforward loop structures.
+Use straightforward loop structures:
 
 ```c
 for (int i = 0; i < count; i++) {
@@ -1080,7 +1092,7 @@ Keep the organization consistent within a project.
 
 ## 20. Global Variables
 
-Avoid global variables unless there is a clear reason to use them.
+Avoid global variables, unless there is a clear reason to use them.
 
 Prefer passing data explicitly to functions:
 
@@ -1095,7 +1107,7 @@ int values[MAX_VALUES];
 int value_count;
 ```
 
-If a global variable is necessary, give it a descriptive name and restrict its visibility with `static` when it is only used within one source file:
+If a global variable is necessary, give it a descriptive name and restrict its visibility with `static`, when it is only used within one source file:
 
 ```c
 static int student_count;
@@ -1275,7 +1287,7 @@ double calculate_average(const int *grades, size_t count);
 
 Before submitting C code for AIC303, check the following:
 
-- [ ] Indentation uses **tabs displayed as 4 characters**.
+- [ ] Indentation uses **tabs displayed as 4 characters for user-level code or 5 characters for kernel code**.
 - [ ] Spaces are not used for structural indentation.
 - [ ] Lines are preferably no longer than 80 columns.
 - [ ] Control-statement braces follow K&R style.
@@ -1302,7 +1314,7 @@ Before submitting C code for AIC303, check the following:
 
 Following are the key rules for styling C source code:
 
-1. Use **4-character tabs** for indentation.
+1. Use **4-character or 8-character tabs** for indentation.
 2. Use **K&R braces** for control structures.
 3. Put function opening braces on the **next line**.
 4. Prefer an **80-column** line length.
@@ -1315,4 +1327,5 @@ Following are the key rules for styling C source code:
 11. Write comments that explain **intent and rationale**, not obvious syntax.
 12. Keep the code consistently formatted and free of trailing whitespace.
 
-The objective is not to make code look identical for its own sake. The objective is to establish a common visual and structural language so that your code can be read, reviewed, debugged, and maintained efficiently.
+The objective is not to make code look identical for its own sake. The objective is to establish a common 
+visual and structural language so that your code can be read, reviewed, debugged, and maintained efficiently.
